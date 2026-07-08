@@ -5,6 +5,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import type Postagem from "../../../models/Postagem";
 import { buscar } from "../../../services/Service";
 import CardPostagem from "../cardpostagem/CardPostagem";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function ListaPostagens() {
 
@@ -19,7 +20,7 @@ function ListaPostagens() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado!')
+            ToastAlerta('Você precisa estar logado!', 'info')
             navigate('/')
         }
     }, [token])
@@ -51,7 +52,7 @@ function ListaPostagens() {
             {isLoading && (
                 <div className="flex justify-center w-full my-8">
                     <SyncLoader
-                        color="#312e81"
+                        color="#000B26"
                         size={32}
                     />
                 </div>
@@ -61,7 +62,7 @@ function ListaPostagens() {
                 <div className="container flex flex-col">
 
                     {(!isLoading && postagens.length === 0) && (
-                            <span className="text-3xl text-center my-8">
+                            <span className="text-3xl text-center my-8 text-[#000B26]">
                                 Nenhuma Postagem foi encontrada!
                             </span>
                     )}

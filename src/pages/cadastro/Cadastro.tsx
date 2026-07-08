@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import type Usuario from "../../models/Usuario";
 import { cadastrarUsuario } from "../../services/Service";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Cadastro() {
 
@@ -27,7 +28,7 @@ function Cadastro() {
     }, [usuario])
 
     function retornar(){
-    navigate('/login')
+    navigate('/')
 }
 
 function atualizarEstado(e: ChangeEvent<HTMLInputElement>){
@@ -50,12 +51,12 @@ async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>){
 
         try{
             await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario)
-            alert('Usuário cadastrado com sucesso!')
+            ToastAlerta("Usuário cadastrado com sucesso!", "sucesso")
         }catch(error){
-            alert('Erro ao cadastrar o usuário!')
+            ToastAlerta("Não foi possível cadastrar o usuário.", "erro")
         }
     }else{
-        alert('Dados do usuário inconsistentes! Verifique as informações do cadastro.')
+        ToastAlerta("Dados do usuário inconsistentes! Verifique as informações do cadastro.", "erro")
         setUsuario({...usuario, senha: ''})
         setConfirmarSenha('')
     }
@@ -73,68 +74,68 @@ async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>){
 
                 <form className="flex justify-center items-center flex-col w-2/3 gap-3"
                     onSubmit={cadastrarNovoUsuario}>
-                    <h2 className='text-slate-900 text-5xl'>Cadastrar</h2>
+                    <h2 className='text-[#000B26] text-5xl'>Cadastrar</h2>
 
                     <div className="flex flex-col w-full">
-                        <label htmlFor="nome">Nome</label>
+                        <label htmlFor="nome" className="text-[#000B26]">Nome</label>
                         <input
                             type="text"
                             id="nome"
                             name="nome"
                             placeholder="Nome"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-[#402924] rounded p-2"
                             value = {usuario.nome}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
 
                     <div className="flex flex-col w-full">
-                        <label htmlFor="usuario">Usuario</label>
+                        <label htmlFor="usuario" className="text-[#000B26]">Usuario</label>
                         <input
                             type="text"
                             id="usuario"
                             name="usuario"
                             placeholder="Usuario"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-[#402924] rounded p-2"
                             value = {usuario.usuario}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
 
                     <div className="flex flex-col w-full">
-                        <label htmlFor="foto">Foto</label>
+                        <label htmlFor="foto" className="text-[#000B26]">Foto</label>
                         <input
                             type="text"
                             id="foto"
                             name="foto"
                             placeholder="Foto"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-[#402924] rounded p-2"
                             value = {usuario.foto}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
 
                     <div className="flex flex-col w-full">
-                        <label htmlFor="senha">Senha</label>
+                        <label htmlFor="senha" className="text-[#000B26]">Senha</label>
                         <input
                             type="password"
                             id="senha"
                             name="senha"
                             placeholder="Senha"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-[#402924] rounded p-2"
                             value = {usuario.senha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
 
                     <div className="flex flex-col w-full">
-                        <label htmlFor="confirmarSenha">Confirmar Senha</label>
+                        <label htmlFor="confirmarSenha" className="text-[#000B26]">Confirmar Senha</label>
                         <input
                             type="password"
                             id="confirmarSenha"
                             name="confirmarSenha"
                             placeholder="Confirmar Senha"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-[#402924] rounded p-2"
                             value={confirmarSenha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
                         />
@@ -143,7 +144,7 @@ async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>){
                     <div className="flex justify-around w-full gap-8">
                         <button
                             type='reset'
-                            className='rounded text-white bg-red-400 hover:bg-red-700 w-1/2 py-2'
+                            className='rounded text-white bg-[#402924] hover:bg-[#000B26] w-1/2 py-2'
                             onClick={retornar}
                         >
                             Cancelar
@@ -151,7 +152,7 @@ async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>){
 
                         <button
                             type='submit'
-                            className='rounded text-white bg-indigo-400 hover:bg-indigo-900 w-1/2 py-2 flex justify-center'
+                            className='rounded text-white bg-[#7CA7EB] hover:bg-[#000B26] w-1/2 py-2 flex justify-center'
                         >
                         { isLoading ?
                             <ClipLoader

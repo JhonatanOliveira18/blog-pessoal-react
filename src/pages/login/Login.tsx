@@ -37,29 +37,29 @@ function Login(){
                 <form className="flex justify-center items-center flex-col w-1/2 gap-4"
                     onSubmit={login}>
 
-                    <h2 className="text-slate-900 text-5xl ">Entrar</h2>
+                    <h2 className="text-[#000B26] text-5xl ">Entrar</h2>
 
                     <div className="flex flex-col w-full">
-                        <label htmlFor="usuario">Usuário</label>
+                        <label htmlFor="usuario" className="text-[#000B26]">Usuário</label>
                         <input
                             type="text"
                             id="usuario"
                             name="usuario"
                             placeholder="Usuario"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-[#402924] rounded p-2"
                             value= {usuarioLogin.usuario}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
 
                     <div className="flex flex-col w-full">
-                        <label htmlFor="senha">Senha</label>
+                        <label htmlFor="senha" className="text-[#000B26]">Senha</label>
                         <input
                             type="password"
                             id="senha"
                             name="senha"
                             placeholder="Senha"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-[#402924] rounded p-2"
                             value={usuarioLogin.senha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
@@ -67,7 +67,7 @@ function Login(){
 
                     <button
                         type='submit'
-                        className="rounded bg-indigo-400 flex justify-center hover:bg-indigo-900 text-white w-1/2 py-2"
+                        className="rounded bg-[#7CA7EB] flex justify-center hover:bg-[#000B26] text-white w-1/2 py-2"
                     >
                     { isLoading ?
                         <ClipLoader
@@ -78,11 +78,11 @@ function Login(){
                     }    
                     </button>
 
-                    <hr className="border-slate-800 w-full" />
+                    <hr className="border-[#402924] w-full" />
 
-                    <p>
+                    <p className="text-[#000B26]">
                         Ainda não tem uma conta?{' '}
-                        <Link to="/cadastro" className="text-indigo-800 hover:underline">
+                        <Link to="/cadastro" className="text-[#7CA7EB] hover:underline hover:text-[#000B26]">
                             Cadastre-se
                         </Link>
                     </p>
