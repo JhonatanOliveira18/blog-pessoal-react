@@ -16,11 +16,11 @@ Durante o desenvolvimento foram aplicados diversos conceitos utilizados no merca
 
 ### 🌐 Frontend
 
-https://blog-pessoal-react-woad.vercel.app
+https://blog-pessoal-react-43eenqyc1-jhonatan-oliveira.vercel.app/
 
 ### 📚 Documentação da API (Swagger)
 
-https://blogpessoal-4qrm.onrender.com/swagger-ui/index.html
+https://blogpessoal-4qrm.onrender.com/
 
 ### 💻 Repositório Frontend
 
