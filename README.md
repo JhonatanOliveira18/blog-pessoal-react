@@ -1,14 +1,4 @@
-# 📝 Blog Pessoal - Spring Boot
-
-<p align="center">
-  <img src="https://img.shields.io/github/languages/top/JhonatanOliveira18/blog-pessoal?style=for-the-badge" />
-  <img src="https://img.shields.io/github/repo-size/JhonatanOliveira18/blog-pessoal?style=for-the-badge" />
-  <img src="https://img.shields.io/github/last-commit/JhonatanOliveira18/blog-pessoal?style=for-the-badge" />
-  <img src="https://img.shields.io/github/issues/JhonatanOliveira18/blog-pessoal?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Status-Concluído-brightgreen?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Java-21+-orange?style=for-the-badge&logo=openjdk" />
-  <img src="https://img.shields.io/badge/Spring%20Boot-3.x-success?style=for-the-badge&logo=springboot" />
-</p>
+# 📝 Blog Pessoal 
 
 ---
 
